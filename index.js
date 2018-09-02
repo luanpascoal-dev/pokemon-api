@@ -4,7 +4,7 @@ var fs = require('fs');
 var pokeDataUtil = require("./poke-data-util");
 var _ = require("underscore");
 var app = express();
-var PORT = 3000;
+// var PORT = 3000;
 
 pokeDataUtil.restoreOriginalData();
 
@@ -23,10 +23,6 @@ app.get("/", function(req, res) {
 app.get("/pokemon", function(req, res) {
     var contents = "";
     var results = _DATA;
-        // contents += "<tr><td>"+ i.num +"</td><td><a href='/pokemon/"+ i.id +"'>"+i.name+"</a></td></tr>\n";
-    // });
-    // var html = "<html>\n<body>\n<table>"+ contents+"</table>\n</body>\n</html>";
-    // res.send(html);
     res.render("index", {allPokemon: results});
 });
 
@@ -171,11 +167,15 @@ app.delete("/api/weakness/:pokemon_name/remove/:weakness_name", function(req, re
   res.send(result);
 });
 
-
-// Start listening on port PORT
-app.listen(PORT, function() {
-    console.log('Server listening on port:', PORT);
+//For running on heroku
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("Server Has Started!");
 });
 
+// for running on local system at port 3000
+// app.listen(PORT, function() {
+//     console.log('Server listening on port:', PORT);
+// });
+
 // DO NOT REMOVE (for testing purposes)
-exports.PORT = PORT;
+exports.PORT = PORT
