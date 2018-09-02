@@ -1,5 +1,8 @@
 # Pokémon API
 
+To view the landing page click [HERE](https://secure-meadow-28015.herokuapp.com/)
+
+
 1.  `GET` `/api/id/:pokemon_id`
 
   Return the entire data entry associated with the given pokemon_id.
