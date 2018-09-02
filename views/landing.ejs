@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pokemon API</title>
+        <base href="/">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <%# <link rel="stylesheet" href="/stylesheets/landing.css" type="text/css"> %>
+        <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script> %>
+        <style>
+        body {
+          background-color: #000;
+        }
+
+        #landing-header {
+          z-index: 1;
+          position: relative;
+          text-align: center;
+          padding-top: 40vh;
+        }
+
+        #landing-header h1 {
+          color: #fff;
+        }
+
+        .slideshow {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .slideshow li {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-size: cover;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          opacity: 0;
+          z-index: 0;
+          animation: imageAnimation 50s linear infinite;
+        }
+
+        .slideshow li:nth-child(1) {
+          background-image: url(https://i.kym-cdn.com/photos/images/original/001/359/472/80e.jpg)
+        }
+        .slideshow li:nth-child(2) {
+          background-image: url(https://www.thequiz.com/wordpress/wp-content/uploads/2017/05/landscape-1456482902-pokemon.jpg);
+          animation-delay: 10s;
+        }
+        .slideshow li:nth-child(3) {
+          background-image: url(http://fanboygaming.com/wp-content/uploads/2011/05/starters_by_kuroi_tsuki-d3fn8cd-600x337.jpg);
+          animation-delay: 20s;
+        }
+        .slideshow li:nth-child(4) {
+          background-image: url(https://gametradersusa.com/wp-content/uploads/2016/07/g262-1024x573.jpg);
+          animation-delay: 30s;
+        }
+        .slideshow li:nth-child(5) {
+          background-image: url(http://unrealitymag.com/wp-content/uploads/2010/11/cool-pokemon-art13.jpg);
+          animation-delay: 40s;
+        }
+
+        @keyframes imageAnimation {
+          0% {
+            opacity: 0;
+            animation-timing-function: ease-in;
+          }
+          10% {
+            opacity: 1;
+            animation-timing-function: ease-out;
+          }
+          20% {
+            opacity: 1
+          }
+          30% {
+            opacity: 0
+          }
+        }
+
+        /* Older browser support - .no-cssanimations class added by modernizr */
+        .no-cssanimations .slideshow li {
+          opacity: 1;
+        }
+
+        </style>
+    </head>
+    <body>
+
+    <div id="landing-header">
+ 		<h1>Simple Pokemon API</h1>
+		<a href="/pokemon" class="btn btn-lg btn-success">View All pokemon</a>
+    </div>
+
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+<% include partials/footer %>

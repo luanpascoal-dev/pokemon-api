@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div class = "containter">
+<header class = "jumbotron">
+  <div class = "container">
+  <h1>Pokemon API</h1>
+  <p>Gotta Catch Em All!</p>
+  <p>
+    <%# <a class = "btn btn-primary btn-lg" href = "/campgrounds/new">Add New Campground</a> %>
+  </p>
+</div>
+</header>
+
+<div class = "row" style = "display:flex; flex-wrap: wrap;">
+  <% allPokemon.forEach(function(pokemon){ %>
+    <div class = "col-md-3 col-sm-6">
+      <div class = "thumbnail">
+        <img src = "<%= pokemon.img %> ">
+        <div class = "caption">
+          <h4><%= pokemon.name %></h4>
+        </div>
+        <p>
+          <a href = "/pokemon/<%=pokemon.id%>" class = "btn btn-primary"> More Info</a>
+        </p>
+      </div>
+
+    </div>
+  <% }); %>
+</div>
+
+</div>
+<% include partials/footer %>

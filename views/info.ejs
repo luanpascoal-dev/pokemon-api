@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+<div class = "containter">
+<header class = "jumbotron">
+  <div class = "container">
+  <h1><%= pokemonInfo.name %></h1>
+  <div class = "thumbnail">
+    <img src = "<%= pokemonInfo.img %> ">
+  </div>
+</div>
+</header>
+
+<h2>General Information</h2>
+  <ul class="list-group">
+    <li class="list-group-item"><%= pokemonInfo.num %></li>
+    <li class="list-group-item"><%= pokemonInfo.type %></li>
+    <li class="list-group-item"><%= pokemonInfo.height %></li>
+    <li class="list-group-item"><%= pokemonInfo.weight %></li>
+    <li class="list-group-item"><%= pokemonInfo.candy %></li>
+    <li class="list-group-item"><%= pokemonInfo.candy_count %></li>
+    <li class="list-group-item"><%= pokemonInfo.egg %></li>
+    <li class="list-group-item"><%= pokemonInfo.spawn_chance %></li>
+    <li class="list-group-item"><%= pokemonInfo.avg_spawns %></li>
+    <li class="list-group-item"><%= pokemonInfo.spawn_time %></li>
+    <li class="list-group-item"><%= pokemonInfo.multipliers %></li>
+  </ul>
+
+<% include partials/footer %>
